@@ -10,11 +10,14 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: cypress-io/github-action@v6
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          browser: chrome
-          headed: true
+          build: npm run build
+          start: npm start
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
