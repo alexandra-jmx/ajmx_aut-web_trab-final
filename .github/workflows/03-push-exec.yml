@@ -1,0 +1,25 @@
+# CI de Nível 01 - Disparo manual a partir de 1 clique
+
+name: 'Execução Manual'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+
+        continue-on-error: true
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: Gerando relatório de testes
+          path: ./cypress/reports/html
+          

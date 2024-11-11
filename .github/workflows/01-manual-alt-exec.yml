@@ -1,0 +1,21 @@
+name: 'Execução Push'
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+    
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16.x
+    
+      - name: Instalação npm
+        run: npm install
+
+      - name: Instalando o Cypress
+        run: npm run cy-run          
