@@ -28,7 +28,6 @@ describe('Automation Exercise', () => {
     login.preencherLogin('tester-1721346302730@mail.com', '12345')
 
     login.validarLoginBemSucedido()
-    cy.screenshot()
   });
 
   it('Test Case 3: Login User with incorrect email and password', () => {
@@ -36,7 +35,6 @@ describe('Automation Exercise', () => {
     login.preencherLogin('tester-9876@mail.com', '54321')
 
     cy.get('p').should('contain', 'Your email or password is incorrect!')
-    cy.screenshot()
   });
 
   it('Test Case 4: Logout User', () => {
@@ -47,7 +45,6 @@ describe('Automation Exercise', () => {
     menu.realizarLogout()
     cy.url().should('contain', 'login')
     cy.contains("Login to your account").should("be.visible");
-    cy.screenshot()
   });
 
   it('Test Case 5: Register User with existing email', () => {
@@ -58,7 +55,6 @@ describe('Automation Exercise', () => {
       .should('be.visible')
       .and('contain', 'Email Address already exist!')
 
-    cy.screenshot()
   });
 
   it('Test Case 6: Contact Us Form', () => {
@@ -67,7 +63,6 @@ describe('Automation Exercise', () => {
     contato.preencherContato()
 
     cy.get('.status').should('have.text', 'Success! Your details have been submitted successfully.')
-    cy.screenshot()
   });
 
   it('Test Case 8: Verify All Products and product detail page', () => {
@@ -94,14 +89,12 @@ describe('Automation Exercise', () => {
     cy.get('.single-products')
       .should('be.visible')
       .and('have.length.at.least', 1)
-    cy.screenshot()
   });
 
   it('Test Case 10: Verify Subscription in home page', () => {
     cadastro.subscription()
 
     cy.contains('You have been successfully subscribed!').should('be.visible')
-    cy.screenshot()
 
   });
 
@@ -115,7 +108,6 @@ describe('Automation Exercise', () => {
     cy.get('[data-qa="order-placed"]').should('be.visible')
     cy.get('section p').should('have.text', 'Congratulations! Your order has been confirmed!')
     
-    cy.screenshot()
 
     conta.deletarUsuario()
   });
