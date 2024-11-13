@@ -4,7 +4,9 @@
   "description": "Trabalho final da disciplina de CI da PGATS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy-run": "cypress run",
+    "cy-open": "cypress open"
   },
   "keywords": [],
   "author": "Alexandra Jacques Machado Xerxenevsky",
