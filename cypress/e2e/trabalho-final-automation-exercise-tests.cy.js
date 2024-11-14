@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import cadastro from '../pages/cadastro'
-import checkout from '../pages/Checkout'
+import checkout from '../pages/checkout'
 import conta from '../pages/conta'
 import contato from '../pages/contato'
 import login from '../pages/login'
